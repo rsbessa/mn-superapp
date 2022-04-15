@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.example
+testFramework: junit
+sourceLanguage: groovy
+buildTool: gradle
+features: [annotation-api, app-name, cache-ehcache, gradle, groovy, groovy-application, hibernate-gorm, hibernate-validator, http-client, http-session, jdbc-hikari, junit, kafka, logback, micronaut-build, mysql, netty-server, openapi, readme, security, security-annotations, serialization-jackson, shade, swagger-ui, testcontainers, yaml]
