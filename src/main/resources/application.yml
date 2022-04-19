@@ -22,23 +22,28 @@ micronaut:
       pattern: /swagger/**
     - access: isAnonymous()
       pattern: /swagger-ui/**
+    enabled: false
 datasources:
   default:
-    url: jdbc:mysql://localhost:3306/db
+    url: jdbc:mysql://localhost:3306/personal_db
     driverClassName: com.mysql.cj.jdbc.Driver
-    username: root
-    password: ''
+    username: sa
+    password: '711711'
 netty:
   default:
     allocator:
       max-order: 3
-dataSource:
-  url: jdbc:mysql://localhost:3306/db
-  driverClassName: com.mysql.cj.jdbc.Driver
-  username: root
-  password: ''
-  pooled: true
-  jmxExport: true
+#dataSource:
+#  url: jdbc:mysql://localhost:3306/db
+#  driverClassName: com.mysql.cj.jdbc.Driver
+#  username: root
+#  password: ''
+#  pooled: true
+#  jmxExport: true
+jpa:
+  default:
+    entity-scan:
+      packages: 'org.besco.superapp.domain.jpa'
 hibernate:
   hbm2ddl:
     auto: update

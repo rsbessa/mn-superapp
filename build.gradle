@@ -5,7 +5,7 @@ plugins {
 }
 
 version = "0.1"
-group = "com.example"
+group = "org.besco.superapp"
 
 repositories {
     mavenCentral()
@@ -16,7 +16,7 @@ dependencies {
     implementation("io.micronaut:micronaut-session")
     implementation("io.micronaut.beanvalidation:micronaut-hibernate-validator")
     implementation("io.micronaut.cache:micronaut-cache-ehcache")
-    implementation("io.micronaut.groovy:micronaut-hibernate-gorm")
+//    implementation("io.micronaut.groovy:micronaut-hibernate-gorm")
     implementation("io.micronaut.groovy:micronaut-runtime-groovy")
     implementation("io.micronaut.kafka:micronaut-kafka")
     implementation("io.micronaut.security:micronaut-security")
@@ -36,11 +36,16 @@ dependencies {
     testImplementation("org.testcontainers:testcontainers")
     implementation("io.micronaut:micronaut-validation")
 
+    implementation("io.micronaut.security:micronaut-security-jwt")
+    annotationProcessor("io.micronaut.security:micronaut-security-annotations")
+    compileOnly("io.micronaut.configuration:micronaut-hibernate-jpa")
+    annotationProcessor("io.micronaut.data:micronaut-data-processor:3.3.0")
+    implementation("io.micronaut.data:micronaut-data-hibernate-jpa::3.3.0")
 }
 
 
 application {
-    mainClass.set("com.example.Application")
+    mainClass.set("org.besco.superapp.main.Application")
 }
 java {
     sourceCompatibility = JavaVersion.toVersion("17")
@@ -53,7 +58,7 @@ micronaut {
     testRuntime("junit5")
     processing {
         incremental(true)
-        annotations("com.example.*")
+        annotations("org.besco.superapp.*")
     }
 }
 
